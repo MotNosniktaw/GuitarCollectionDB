@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-05 10:34:33 +0000
+# Generation Time: 2019-08-05 10:57:00 +0000
 # ************************************************************
 
 
@@ -82,22 +82,22 @@ DROP TABLE IF EXISTS `guitars`;
 
 CREATE TABLE `guitars` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `brand` int(11) unsigned NOT NULL,
+  `brandID` int(11) unsigned NOT NULL,
   `model` varchar(255) NOT NULL DEFAULT '',
   `year` year(4) DEFAULT NULL,
-  `type` int(11) unsigned NOT NULL,
-  `country` int(11) unsigned NOT NULL,
+  `typeID` int(11) unsigned NOT NULL,
+  `countryID` int(11) unsigned NOT NULL,
   `LH or RH` enum('LH','RH') NOT NULL,
   `value` int(11) DEFAULT NULL,
-  `serialCode` int(11) DEFAULT NULL,
+  `serialCode` varchar(255) DEFAULT NULL,
   `dateAcquired` date NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `brand` (`brand`),
-  KEY `countries` (`country`),
-  KEY `type` (`type`),
-  CONSTRAINT `brand` FOREIGN KEY (`brand`) REFERENCES `brand` (`id`),
-  CONSTRAINT `countries` FOREIGN KEY (`country`) REFERENCES `countries` (`id`),
-  CONSTRAINT `type` FOREIGN KEY (`type`) REFERENCES `type` (`id`)
+  KEY `brand` (`brandID`),
+  KEY `countries` (`countryID`),
+  KEY `type` (`typeID`),
+  CONSTRAINT `brand` FOREIGN KEY (`brandID`) REFERENCES `brand` (`id`),
+  CONSTRAINT `countries` FOREIGN KEY (`countryID`) REFERENCES `countries` (`id`),
+  CONSTRAINT `type` FOREIGN KEY (`typeID`) REFERENCES `type` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -134,16 +134,11 @@ LOCK TABLES `type` WRITE;
 
 INSERT INTO `type` (`id`, `type`)
 VALUES
-	(1,'Electric, 6-string'),
-	(2,'Electric, 12-string'),
-	(3,'Acoustic, 6-string'),
-	(4,'Acoustic, 12-string'),
-	(5,'Bass, 4-string'),
-	(6,'Bass, 5-string'),
-	(7,'Bass, Acoustic'),
-	(8,'Banjo'),
-	(9,'Banjo, Tenor'),
-	(10,'Sitar');
+	(1,'Electric'),
+	(2,'Acoustic'),
+	(3,'Bass'),
+	(4,'Banjo'),
+	(5,'Sitar');
 
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
