@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-05 10:18:36 +0000
+# Generation Time: 2019-08-05 10:34:33 +0000
 # ************************************************************
 
 
@@ -139,7 +139,7 @@ VALUES
 	(3,'Acoustic, 6-string'),
 	(4,'Acoustic, 12-string'),
 	(5,'Bass, 4-string'),
-	(6,'Bass, String'),
+	(6,'Bass, 5-string'),
 	(7,'Bass, Acoustic'),
 	(8,'Banjo'),
 	(9,'Banjo, Tenor'),
