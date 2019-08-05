@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-05 10:57:00 +0000
+# Generation Time: 2019-08-05 12:58:32 +0000
 # ************************************************************
 
 
@@ -42,7 +42,11 @@ VALUES
 	(4,'Squier'),
 	(5,'Ibanez'),
 	(6,'PRS'),
-	(7,'Yamaha');
+	(7,'Yamaha'),
+	(8,'Rickenbacker'),
+	(9,'Martin'),
+	(10,'Washington'),
+	(11,'Crafter');
 
 /*!40000 ALTER TABLE `brand` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -69,7 +73,8 @@ VALUES
 	(3,'Japan'),
 	(4,'Scotland'),
 	(5,'Spain'),
-	(6,'China');
+	(6,'China'),
+	(9,'Denmark');
 
 /*!40000 ALTER TABLE `countries` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -100,6 +105,20 @@ CREATE TABLE `guitars` (
   CONSTRAINT `type` FOREIGN KEY (`typeID`) REFERENCES `type` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `guitars` WRITE;
+/*!40000 ALTER TABLE `guitars` DISABLE KEYS */;
+
+INSERT INTO `guitars` (`id`, `brandID`, `model`, `year`, `typeID`, `countryID`, `LH or RH`, `value`, `serialCode`, `dateAcquired`)
+VALUES
+	(1,5,'Big One','2014',2,6,'RH',NULL,'af76agfa7','2019-08-04'),
+	(2,5,'GSR 205','2016',3,1,'RH',250,'','2016-05-14'),
+	(4,6,'Rocker','1967',3,1,'RH',NULL,NULL,'2015-05-14'),
+	(7,10,'Rocker','1967',9,1,'RH',NULL,NULL,'2015-05-14'),
+	(8,10,'Rocker','1967',9,1,'RH',NULL,NULL,'2015-05-14'),
+	(9,6,'Thunder','1998',4,3,'LH',99999,'A12345','2010-08-19');
+
+/*!40000 ALTER TABLE `guitars` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table images
@@ -116,6 +135,18 @@ CREATE TABLE `images` (
   CONSTRAINT `images` FOREIGN KEY (`guitarID`) REFERENCES `guitars` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+
+INSERT INTO `images` (`id`, `guitarID`, `fileLocation`)
+VALUES
+	(3,2,'./img/guitar1.jpg'),
+	(4,2,'./img/guitar2.jpg'),
+	(5,2,'./img/guitar3.jpg'),
+	(6,2,'./img/guitar4.jpg');
+
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table type
@@ -138,7 +169,8 @@ VALUES
 	(2,'Acoustic'),
 	(3,'Bass'),
 	(4,'Banjo'),
-	(5,'Sitar');
+	(5,'Sitar'),
+	(9,'Ukelele');
 
 /*!40000 ALTER TABLE `type` ENABLE KEYS */;
 UNLOCK TABLES;
