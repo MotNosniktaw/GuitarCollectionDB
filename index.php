@@ -1,7 +1,8 @@
 <?php
 
-$db = new PDO(
-    'mysql:host=192.168.20.20, dbname=Guitars',
+$db = new PDO
+(
+    'mysql:host=192.168.20.20; dbname=Guitars',
     'root',
     ''
 );
