@@ -14,8 +14,8 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
  * Returns all desired item values for all items.
  * Where many images are stored for an item, only the first added (MAIN image) is returned
  *
- * @param $database
- * @return array
+ * @param $database - this is a PDO established connection to the 'Guitars' database
+ * @return array - this contains all information for all guitars in an associative array
  */
 function getAllFromDatabase($database):array
 {
@@ -37,5 +37,5 @@ function getAllFromDatabase($database):array
     return $sqlGetAll->fetchAll();
 }
 
-$returnAll = getAllFromDatabase($db);
-var_dump($returnAll); 
+$allGuitars = getAllFromDatabase($db);
+var_dump($allGuitars);
