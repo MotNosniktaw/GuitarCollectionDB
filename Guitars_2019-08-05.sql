@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-05 09:51:18 +0000
+# Generation Time: 2019-08-05 10:18:36 +0000
 # ************************************************************
 
 
@@ -87,7 +87,7 @@ CREATE TABLE `guitars` (
   `year` year(4) DEFAULT NULL,
   `type` int(11) unsigned NOT NULL,
   `country` int(11) unsigned NOT NULL,
-  `LH or RH` varchar(255) NOT NULL DEFAULT '',
+  `LH or RH` enum('LH','RH') NOT NULL,
   `value` int(11) DEFAULT NULL,
   `serialCode` int(11) DEFAULT NULL,
   `dateAcquired` date NOT NULL,
