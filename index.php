@@ -35,3 +35,6 @@ function getAllFromDatabase($database):array
     $sqlGetAll->execute();
     return $sqlGetAll->fetchAll();
 }
+
+$returnAll = getAllFromDatabase($db);
+var_dump($returnAll); 
