@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-05 15:27:53 +0000
+# Generation Time: 2019-08-05 15:44:57 +0000
 # ************************************************************
 
 
@@ -31,6 +31,31 @@ CREATE TABLE `brands` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `brands` WRITE;
+/*!40000 ALTER TABLE `brands` DISABLE KEYS */;
+
+INSERT INTO `brands` (`id`, `brand`)
+VALUES
+	(1,'Fender'),
+	(2,'Squier'),
+	(3,'Gibson'),
+	(4,'Epiphone'),
+	(5,'Gretsch'),
+	(6,'PRS'),
+	(7,'Rickenbacker'),
+	(8,'Ibanez'),
+	(9,'Jackson'),
+	(10,'Martin'),
+	(11,'Taylor'),
+	(12,'Guild'),
+	(13,'Yamaha'),
+	(14,'Washburn'),
+	(15,'Ovation'),
+	(16,'Guild'),
+	(17,'Crafter');
+
+/*!40000 ALTER TABLE `brands` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table countries
@@ -44,6 +69,22 @@ CREATE TABLE `countries` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `countries` WRITE;
+/*!40000 ALTER TABLE `countries` DISABLE KEYS */;
+
+INSERT INTO `countries` (`id`, `country`)
+VALUES
+	(1,'Germany'),
+	(2,'USA'),
+	(3,'Canada'),
+	(4,'Japan'),
+	(5,'France'),
+	(6,'China'),
+	(7,'UK'),
+	(8,'India');
+
+/*!40000 ALTER TABLE `countries` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table guitars
@@ -100,6 +141,21 @@ CREATE TABLE `types` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `types` WRITE;
+/*!40000 ALTER TABLE `types` DISABLE KEYS */;
+
+INSERT INTO `types` (`id`, `type`)
+VALUES
+	(1,'Electric'),
+	(2,'Acoustic'),
+	(3,'Bass'),
+	(4,'Banjo'),
+	(5,'Sitar'),
+	(6,'Ukelele'),
+	(7,'Violin');
+
+/*!40000 ALTER TABLE `types` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 
