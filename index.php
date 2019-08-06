@@ -39,6 +39,13 @@ function getAllFromDatabase($database):array
 
 function buildTable($guitarsArray) {
     echo '<tr><th>#</th><th>Image</th><th>Guitar</th><th>Year</th><th>Type</th><th>Country</th><th>Value</th><th>Date Acquired</th>';
+    foreach ($guitarsArray as $guitar) {
+        echo '<tr>
+                    <td>' . $guitar['id'] . '</td>
+                    <td><img src="' . $guitar['fileLocation'] . '"</td>
+                    <td>' . $guitar['brand'] . ' '. $guitar['model'] . '</td>
+              </tr>';
+    }
 }
 ?>
 <html lang=en">
