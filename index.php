@@ -49,6 +49,21 @@ var_dump($allGuitars);
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div>
+    <h1>
+
+    </h1>
+    <p>
+
+    </p>
+</div>
+<div>
+    <table>
+        <?php
+        //code to create <tr></tr> elements and fill them with <td> and <th> elements containing item information and column headings
+        ?>
+    </table>
+</div>
 
 </body>
 </html>
