@@ -37,14 +37,23 @@ function getAllFromDatabase($database):array
     return $sqlGetAll->fetchAll();
 }
 
+function populateRow($item) {
+    return '<tr>
+                    <td>' . $item['id'] . '</td>
+                    <td><img src="' . $item['fileLocation'] . '"</td>
+                    <td>' . $item['brand'] . ' '. $item['model'] . '</td>
+                    <td>' . $item['year'] . '</td>
+                    <td>' . $item['type'] . '</td>
+                    <td>' . $item['country'] . '</td>
+                    <td>' . $item['value'] . '</td>
+                    <td>' . $item['dateAcquired'] . '</td>
+              </tr>';
+}
+
 function buildTable($guitarsArray) {
     echo '<tr><th>#</th><th>Image</th><th>Guitar</th><th>Year</th><th>Type</th><th>Country</th><th>Value</th><th>Date Acquired</th>';
     foreach ($guitarsArray as $guitar) {
-        echo '<tr>
-                    <td>' . $guitar['id'] . '</td>
-                    <td><img src="' . $guitar['fileLocation'] . '"</td>
-                    <td>' . $guitar['brand'] . ' '. $guitar['model'] . '</td>
-              </tr>';
+        echo populateRow($guitar);
     }
 }
 ?>
