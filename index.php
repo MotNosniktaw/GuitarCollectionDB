@@ -13,21 +13,16 @@ require_once 'functions.php';
 </head>
 <body>
 <div>
-    <h1>Guitar Colleciton</h1>
-    <p>There are the things in my collection</p>
+    <h1>Guitar Collection</h1>
+    <p>These are the things in my collection</p>
 </div>
 <div>
-        <?php
-        $db = getDB();
-        $allGuitars = getAllFromDatabase($db);
-        buildTable($allGuitars);
-        //code to create <tr></tr> elements and fill them with <td> and <th> elements containing item information and column headings
-        ?>
+    <?php
+    $db = getDB();
+    $allGuitars = getAllFromDatabase($db);
+    buildTable($allGuitars);
+    ?>
 </div>
-<?php
-
-var_dump($allGuitars);
-?>
 
 </body>
 </html>

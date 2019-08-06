@@ -9,3 +9,13 @@ body {
 img {
     width: 200px;
 }
+
+.row {
+    overflow:auto;
+}
+
+.item-detail {
+    float:left;
+    width: 200px;
+    margin: 0 auto;
+}

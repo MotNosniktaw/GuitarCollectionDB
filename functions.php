@@ -40,31 +40,28 @@ function getAllFromDatabase(PDO $database):array
     return $sqlGetAll->fetchAll();
 }
 
-function populateRow(array $item):string {
-    return '<div>
-                    <div>' . $item['id'] . '</div>
-                    <div><img src="' . $item['fileLocation'] . '"</div>
-                    <div>' . $item['brand'] . ' '. $item['model'] . '</div>
-                    <div>' . $item['year'] . '</div>
-                    <div>' . $item['type'] . '</div>
-                    <div>' . $item['country'] . '</div>
-                    <div>' . $item['value'] . '</div>
-                    <div>' . $item['dateAcquired'] . '</div>
-              </div>';
-}
-
-function buildTable(array $guitarsArray):string {
-    echo '<div>
-            <div>#</div>
-            <div>Image</div>
-            <div>Guitar</div>
-            <div>Year</div>
-            <div>Type</div>
-            <div>Country</div>
-            <div>Value</div>
-            <div>Date Acquired</div>
+function buildTable(array $guitarsArray) {
+    echo '<div class="row header">
+            <div class="item-detail">#</div>
+            <div class="item-detail">Image</div>
+            <div class="item-detail">Guitar</div>
+            <div class="item-detail">Year</div>
+            <div class="item-detail">Type</div>
+            <div class="item-detail">Country</div>
+            <div class="item-detail">Value</div>
+            <div class="item-detail">Date Acquired</div>
          </div>';
     foreach ($guitarsArray as $guitar) {
-        echo populateRow($guitar);
+        echo '<div class="row item">
+                    <div class="item-detail column1">' . $guitar['id'] . '</div>
+                    <div class="item-detail"><img src="' . $guitar['fileLocation'] . '"></div>
+                    <div class="item-detail">' . $guitar['brand'] . ' '. $guitar['model'] . '</div>
+                    <div class="item-detail">' . $guitar['year'] . '</div>
+                    <div class="item-detail">' . $guitar['type'] . '</div>
+                    <div class="item-detail">' . $guitar['country'] . '</div>
+                    <div class="item-detail">' . $guitar['value'] . '</div>
+                    <div class="item-detail">' . $guitar['dateAcquired'] . '</div>
+              </div>';
     }
 }
+?>
