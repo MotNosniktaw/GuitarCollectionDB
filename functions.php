@@ -41,7 +41,7 @@ function getAllFromDatabase(PDO $database):array
 }
 
 function buildTable(array $guitarsArray) {
-    echo '<div class="row header">
+    $table = '<div class="row header">
             <div class="item-detail">#</div>
             <div class="item-detail">Image</div>
             <div class="item-detail">Guitar</div>
@@ -52,7 +52,7 @@ function buildTable(array $guitarsArray) {
             <div class="item-detail">Date Acquired</div>
          </div>';
     foreach ($guitarsArray as $guitar) {
-        echo '<div class="row item">
+        $table .= '<div class="row item">
                     <div class="item-detail column1">' . $guitar['id'] . '</div>
                     <div class="item-detail"><img src="' . $guitar['fileLocation'] . '"></div>
                     <div class="item-detail">' . $guitar['brand'] . ' '. $guitar['model'] . '</div>
@@ -63,5 +63,6 @@ function buildTable(array $guitarsArray) {
                     <div class="item-detail">' . $guitar['dateAcquired'] . '</div>
               </div>';
     }
+    return $table;
 }
 ?>
