@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-05 15:44:57 +0000
+# Generation Time: 2019-08-06 09:28:17 +0000
 # ************************************************************
 
 
@@ -52,7 +52,8 @@ VALUES
 	(14,'Washburn'),
 	(15,'Ovation'),
 	(16,'Guild'),
-	(17,'Crafter');
+	(17,'Crafter'),
+	(18,'Vintage');
 
 /*!40000 ALTER TABLE `brands` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -112,6 +113,22 @@ CREATE TABLE `guitars` (
   CONSTRAINT `type` FOREIGN KEY (`typeID`) REFERENCES `types` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `guitars` WRITE;
+/*!40000 ALTER TABLE `guitars` DISABLE KEYS */;
+
+INSERT INTO `guitars` (`id`, `brandID`, `model`, `year`, `typeID`, `countryID`, `LH or RH`, `value`, `serialCode`, `dateAcquired`)
+VALUES
+	(1,3,'Les Paul Classic, Gold Top','2019',1,2,'RH',1649,NULL,'2019-08-05'),
+	(2,1,'Stratocaster','1983',1,4,'RH',340,'E432-Q34ER3','2017-02-14'),
+	(3,4,'Dot 335, Cherry Red','2004',1,1,'RH',349,'ED04-23486','2005-04-16'),
+	(4,8,'GSR205, Walnut Flat','2016',3,5,'RH',269,'105279','2016-05-26'),
+	(5,4,'Casino, Sunburst','1964',1,2,'RH',4000,'1345543-EC64','1978-03-19'),
+	(6,18,'ElectroAcoustic, Natural Satin','2017',3,7,'RH',399,'17EAB-VNS491','2018-05-14'),
+	(7,7,'4003LE, Pillar Box Red','1996',3,1,'RH',2739,'139408','2001-10-18'),
+	(8,5,'G5420T Electromatic, Aspen Green','1958',1,3,'RH',879,'GEAG-23512','1987-11-01');
+
+/*!40000 ALTER TABLE `guitars` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table images
@@ -122,12 +139,30 @@ DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `guitarID` int(11) unsigned DEFAULT NULL,
-  `fileLocation` varchar(255) NOT NULL DEFAULT '',
+  `fileLocation` varchar(255) NOT NULL DEFAULT './img/guitarPlaceholder1.jpg',
   PRIMARY KEY (`id`),
   KEY `images` (`guitarID`),
   CONSTRAINT `images` FOREIGN KEY (`guitarID`) REFERENCES `guitars` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+
+INSERT INTO `images` (`id`, `guitarID`, `fileLocation`)
+VALUES
+	(1,1,'./img/LesPaul1.jpg'),
+	(2,2,'./img/FenderStratocaster1.jpg'),
+	(3,3,'./img/EpiphoneDot1.jpg'),
+	(4,4,'./img/IbanezGSR1.jpg'),
+	(5,5,'./img/EpiphoneCasino2.jpg'),
+	(6,6,'./img/VintageEAB1.jpg'),
+	(7,6,'./img/VintageEAB2.jpg'),
+	(8,7,'./img/Rickenbacker5003LE1.jpg'),
+	(9,7,'./img/Rickenbacker5003LE2.jpg'),
+	(10,8,'./img/GretschElectromatic1.jpg');
+
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table types
