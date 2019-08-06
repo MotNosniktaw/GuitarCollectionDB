@@ -6,24 +6,15 @@ use PHPUnit\Framework\TestCase;
 
 class testIndex extends TestCase
 {
-    public function testPopulateRows_standardInput()
+    public function testBuildTable_singleItemInput()
     {
-        $guitarInput = ['id' => 1, 'fileLocation' => './img/guitarPic1.jpg', 'brand' => 'Yamaha', 'model' => 'Guitar', 'year' => 1999,
-            'type' => 'Electric', 'country' => 'Japan', 'value' => 25, 'dateAcquired' => '2000-01-01'];
+        $guitarInput = [['id' => 1, 'fileLocation' => './img/guitarPic1.jpg', 'brand' => 'Yamaha', 'model' => 'Guitar', 'year' => 1999,
+            'type' => 'Electric', 'country' => 'Japan', 'value' => 25, 'dateAcquired' => '2000-01-01']];
 
-        $expectedRowContents = '<tr>
-                    <td>1</td>
-                    <td><img src="./img/guitarPic1.jpg"</td>
-                    <td>Yamaha Guitar</td>
-                    <td>1999</td>
-                    <td>Electric</td>
-                    <td>Japan</td>
-                    <td>25</td>
-                    <td>2000-01-01</td>
-              </tr>';
+        $expectedTableContents = '<div class="row item"><div class="item-detail">1</div><div class="item-detail"><img src="./img/guitarPic1.jpg"></div><div class="item-detail">Yamaha Guitar</div><div class="item-detail">1999</div><div class="item-detail">Electric</div><div class="item-detail">Japan</div><div class="item-detail">25</div><div class="item-detail">2000-01-01</div></div>';
 
-        $rowContents = populateRow($guitarInput);
+        $tableContents = buildTable($guitarInput);
 
-        $this->assertEquals($expectedRowContents, $rowContents);
+        $this->assertEquals($expectedTableContents, $tableContents);
     }
 }

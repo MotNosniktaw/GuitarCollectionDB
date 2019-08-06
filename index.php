@@ -17,6 +17,16 @@ require_once 'functions.php';
     <p>These are the things in my collection</p>
 </div>
 <div>
+    <div class="row header">
+        <div class="item-detail">#</div>
+        <div class="item-detail">Image</div>
+        <div class="item-detail">Guitar</div>
+        <div class="item-detail">Year</div>
+        <div class="item-detail">Type</div>
+        <div class="item-detail">Country</div>
+        <div class="item-detail">Value</div>
+        <div class="item-detail">Date Acquired</div>
+    </div>
     <?php
     $db = getDB();
     $allGuitars = getAllFromDatabase($db);

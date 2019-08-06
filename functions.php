@@ -41,27 +41,18 @@ function getAllFromDatabase(PDO $database):array
 }
 
 function buildTable(array $guitarsArray) {
-    $table = '<div class="row header">
-            <div class="item-detail">#</div>
-            <div class="item-detail">Image</div>
-            <div class="item-detail">Guitar</div>
-            <div class="item-detail">Year</div>
-            <div class="item-detail">Type</div>
-            <div class="item-detail">Country</div>
-            <div class="item-detail">Value</div>
-            <div class="item-detail">Date Acquired</div>
-         </div>';
+    $table = '';
     foreach ($guitarsArray as $guitar) {
-        $table .= '<div class="row item">
-                    <div class="item-detail column1">' . $guitar['id'] . '</div>
-                    <div class="item-detail"><img src="' . $guitar['fileLocation'] . '"></div>
-                    <div class="item-detail">' . $guitar['brand'] . ' '. $guitar['model'] . '</div>
-                    <div class="item-detail">' . $guitar['year'] . '</div>
-                    <div class="item-detail">' . $guitar['type'] . '</div>
-                    <div class="item-detail">' . $guitar['country'] . '</div>
-                    <div class="item-detail">' . $guitar['value'] . '</div>
-                    <div class="item-detail">' . $guitar['dateAcquired'] . '</div>
-              </div>';
+        $table .= '<div class="row item">';
+        $table .= '<div class="item-detail">' . $guitar['id'] . '</div>';
+        $table .= '<div class="item-detail"><img src="' . $guitar['fileLocation'] . '"></div>';
+        $table .= '<div class="item-detail">' . $guitar['brand'] . ' '. $guitar['model'] . '</div>';
+        $table .= '<div class="item-detail">' . $guitar['year'] . '</div>';
+        $table .= '<div class="item-detail">' . $guitar['type'] . '</div>';
+        $table .= '<div class="item-detail">' . $guitar['country'] . '</div>';
+        $table .= '<div class="item-detail">' . $guitar['value'] . '</div>';
+        $table .= '<div class="item-detail">' . $guitar['dateAcquired'] . '</div>';
+        $table .= '</div>';
     }
     return $table;
 }
