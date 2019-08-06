@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * takes no inputs and creates an instance of PDO that access Guitars database
+ *
+ * @return PDO
+ */
 function getDB()
 {
     $database = new PDO
@@ -40,6 +44,13 @@ function getAllFromDatabase(PDO $database):array
     return $sqlGetAll->fetchAll();
 }
 
+/**
+ * Takes multidimensional array outputted from PDO fetchAll function.
+ * Outputs string containing Guitar Item values separated into separate divs and "row" container divs for respective Guitar Item
+ *
+ * @param array $guitarsArray
+ * @return string
+ */
 function buildTable(array $guitarsArray):string {
     $table = '';
     if (isset($guitarsArray[0]['id'])
