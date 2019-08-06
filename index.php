@@ -36,9 +36,6 @@ function getAllFromDatabase($database):array
     $sqlGetAll->execute();
     return $sqlGetAll->fetchAll();
 }
-
-$allGuitars = getAllFromDatabase($db);
-var_dump($allGuitars);
 ?>
 <html lang=en">
 <head>
@@ -51,10 +48,10 @@ var_dump($allGuitars);
 <body>
 <div>
     <h1>
-
+        Guitar Colleciton
     </h1>
     <p>
-
+        There are the things in my collection
     </p>
 </div>
 <div>
@@ -64,6 +61,10 @@ var_dump($allGuitars);
         ?>
     </table>
 </div>
+<?php
+$allGuitars = getAllFromDatabase($db);
+var_dump($allGuitars);
+?>
 
 </body>
 </html>
