@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-06 08:50:10 +0000
+# Generation Time: 2019-08-06 08:56:19 +0000
 # ************************************************************
 
 
@@ -145,6 +145,24 @@ CREATE TABLE `images` (
   CONSTRAINT `images` FOREIGN KEY (`guitarID`) REFERENCES `guitars` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+
+INSERT INTO `images` (`id`, `guitarID`, `fileLocation`)
+VALUES
+	(1,1,'./img/LesPaul1.jpg'),
+	(2,2,'./img/FenderStratocaster1.jpg'),
+	(3,3,'./img/EpiphoneDot1.jpg'),
+	(4,4,'./img/IbanezGSR1.jpg'),
+	(5,5,'./img/EpiphoneCasino2.jpg'),
+	(6,6,'./img/VintageEAB1.jpg'),
+	(7,6,'./img/VintageEAB2.jpg'),
+	(8,7,'./img/Rickenbacker5003LE1.jpg'),
+	(9,7,'./img/Rickenbacker5003LE2.jpg'),
+	(10,8,'./img/GretschElectromatic1.jpg');
+
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table types
