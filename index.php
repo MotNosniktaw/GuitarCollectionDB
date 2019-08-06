@@ -36,6 +36,10 @@ function getAllFromDatabase($database):array
     $sqlGetAll->execute();
     return $sqlGetAll->fetchAll();
 }
+
+function buildTable($guitarsArray) {
+    echo '<tr><th>#</th><th>Image</th><th>Guitar</th><th>Year</th><th>Type</th><th>Country</th><th>Value</th><th>Date Acquired</th>';
+}
 ?>
 <html lang=en">
 <head>
@@ -57,12 +61,14 @@ function getAllFromDatabase($database):array
 <div>
     <table>
         <?php
+        $allGuitars = getAllFromDatabase($db);
+        buildTable($allGuitars);
         //code to create <tr></tr> elements and fill them with <td> and <th> elements containing item information and column headings
         ?>
     </table>
 </div>
 <?php
-$allGuitars = getAllFromDatabase($db);
+
 var_dump($allGuitars);
 ?>
 
