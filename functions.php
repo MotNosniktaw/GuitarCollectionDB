@@ -20,7 +20,7 @@ function getDB()
  * @param $database - this is a PDO established connection to the 'Guitars' database
  * @return array - this contains all information for all guitars in an associative array
  */
-function getAllFromDatabase(array $database):array
+function getAllFromDatabase(PDO $database):array
 {
     $sqlGetAll = $database->prepare(
         'SELECT `guitars`.`id`, `images`.`fileLocation`, `brands`.`brand`, `guitars`.`model`, `guitars`.`year`, `types`.`type`,
@@ -41,20 +41,29 @@ function getAllFromDatabase(array $database):array
 }
 
 function populateRow(array $item):string {
-    return '<tr>
-                    <td>' . $item['id'] . '</td>
-                    <td><img src="' . $item['fileLocation'] . '"</td>
-                    <td>' . $item['brand'] . ' '. $item['model'] . '</td>
-                    <td>' . $item['year'] . '</td>
-                    <td>' . $item['type'] . '</td>
-                    <td>' . $item['country'] . '</td>
-                    <td>' . $item['value'] . '</td>
-                    <td>' . $item['dateAcquired'] . '</td>
-              </tr>';
+    return '<div>
+                    <div>' . $item['id'] . '</div>
+                    <div><img src="' . $item['fileLocation'] . '"</div>
+                    <div>' . $item['brand'] . ' '. $item['model'] . '</div>
+                    <div>' . $item['year'] . '</div>
+                    <div>' . $item['type'] . '</div>
+                    <div>' . $item['country'] . '</div>
+                    <div>' . $item['value'] . '</div>
+                    <div>' . $item['dateAcquired'] . '</div>
+              </div>';
 }
 
 function buildTable(array $guitarsArray):string {
-    echo '<tr><th>#</th><th>Image</th><th>Guitar</th><th>Year</th><th>Type</th><th>Country</th><th>Value</th><th>Date Acquired</th>';
+    echo '<div>
+            <div>#</div>
+            <div>Image</div>
+            <div>Guitar</div>
+            <div>Year</div>
+            <div>Type</div>
+            <div>Country</div>
+            <div>Value</div>
+            <div>Date Acquired</div>
+         </div>';
     foreach ($guitarsArray as $guitar) {
         echo populateRow($guitar);
     }

@@ -17,14 +17,12 @@ require_once 'functions.php';
     <p>There are the things in my collection</p>
 </div>
 <div>
-    <table>
         <?php
         $db = getDB();
         $allGuitars = getAllFromDatabase($db);
         buildTable($allGuitars);
         //code to create <tr></tr> elements and fill them with <td> and <th> elements containing item information and column headings
         ?>
-    </table>
 </div>
 <?php
 
