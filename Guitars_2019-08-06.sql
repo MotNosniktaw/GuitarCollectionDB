@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-06 08:56:19 +0000
+# Generation Time: 2019-08-06 09:28:17 +0000
 # ************************************************************
 
 
@@ -139,7 +139,7 @@ DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `guitarID` int(11) unsigned DEFAULT NULL,
-  `fileLocation` varchar(255) NOT NULL DEFAULT '',
+  `fileLocation` varchar(255) NOT NULL DEFAULT './img/guitarPlaceholder1.jpg',
   PRIMARY KEY (`id`),
   KEY `images` (`guitarID`),
   CONSTRAINT `images` FOREIGN KEY (`guitarID`) REFERENCES `guitars` (`id`)
