@@ -54,7 +54,7 @@ function buildTable($guitarsArray) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guitar Collection</title>
     <link rel="stylesheet" type="text/css" href="normalize-8-0-1 copy.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 <div>
