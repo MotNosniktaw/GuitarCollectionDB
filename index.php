@@ -43,6 +43,7 @@ var_dump($allGuitars);
 <html lang=en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guitar Collection</title>
     <link rel="stylesheet" type="text/css" href="normalize-8-0-1 copy.css">
     <link rel="stylesheet" type="text/css" href="style.css">
