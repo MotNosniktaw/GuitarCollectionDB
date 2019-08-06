@@ -40,20 +40,29 @@ function getAllFromDatabase(PDO $database):array
     return $sqlGetAll->fetchAll();
 }
 
-function buildTable(array $guitarsArray) {
+function buildTable(array $guitarsArray):string {
     $table = '';
-    foreach ($guitarsArray as $guitar) {
-        $table .= '<div class="row item">';
-        $table .= '<div class="item-detail">' . $guitar['id'] . '</div>';
-        $table .= '<div class="item-detail"><img src="' . $guitar['fileLocation'] . '"></div>';
-        $table .= '<div class="item-detail">' . $guitar['brand'] . ' '. $guitar['model'] . '</div>';
-        $table .= '<div class="item-detail">' . $guitar['year'] . '</div>';
-        $table .= '<div class="item-detail">' . $guitar['type'] . '</div>';
-        $table .= '<div class="item-detail">' . $guitar['country'] . '</div>';
-        $table .= '<div class="item-detail">' . $guitar['value'] . '</div>';
-        $table .= '<div class="item-detail">' . $guitar['dateAcquired'] . '</div>';
-        $table .= '</div>';
+    if (isset($guitarsArray[0]['id'])
+        && isset($guitarsArray[0]['fileLocation'])
+        && isset($guitarsArray[0]['brand']) && isset($guitarsArray[0]['model'])
+        && isset($guitarsArray[0]['year']) && isset($guitarsArray[0]['type'])
+        && isset($guitarsArray[0]['country']) && isset($guitarsArray[0]['value'])
+        && isset($guitarsArray[0]['dateAcquired'])) {
+        foreach ($guitarsArray as $guitar) {
+            $table .= '<div class="row item">';
+            $table .= '<div class="item-detail">' . $guitar['id'] . '</div>';
+            $table .= '<div class="item-detail"><img src="' . $guitar['fileLocation'] . '"></div>';
+            $table .= '<div class="item-detail">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
+            $table .= '<div class="item-detail">' . $guitar['year'] . '</div>';
+            $table .= '<div class="item-detail">' . $guitar['type'] . '</div>';
+            $table .= '<div class="item-detail">' . $guitar['country'] . '</div>';
+            $table .= '<div class="item-detail">' . $guitar['value'] . '</div>';
+            $table .= '<div class="item-detail">' . $guitar['dateAcquired'] . '</div>';
+            $table .= '</div>';
+        }
+        return $table;
+    } else {
+        return 'Database is not returning valid keys. Please contact administrator';
     }
-    return $table;
 }
 ?>
