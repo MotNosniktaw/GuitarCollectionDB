@@ -56,6 +56,7 @@ function buildTable($guitarsArray) {
         echo populateRow($guitar);
     }
 }
+
 ?>
 <html lang=en">
 <head>
@@ -85,6 +86,7 @@ function buildTable($guitarsArray) {
 </div>
 <?php
 
+$allGuitars = getAllFromDatabase($db);
 var_dump($allGuitars);
 ?>
 
