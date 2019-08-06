@@ -50,14 +50,14 @@ function buildTable(array $guitarsArray):string {
         && isset($guitarsArray[0]['dateAcquired'])) {
         foreach ($guitarsArray as $guitar) {
             $table .= '<div class="row item">';
-            $table .= '<div class="item-detail">' . $guitar['id'] . '</div>';
-            $table .= '<div class="item-detail"><img src="' . $guitar['fileLocation'] . '"></div>';
-            $table .= '<div class="item-detail">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
-            $table .= '<div class="item-detail">' . $guitar['year'] . '</div>';
-            $table .= '<div class="item-detail">' . $guitar['type'] . '</div>';
-            $table .= '<div class="item-detail">' . $guitar['country'] . '</div>';
-            $table .= '<div class="item-detail">' . $guitar['value'] . '</div>';
-            $table .= '<div class="item-detail">' . $guitar['dateAcquired'] . '</div>';
+            $table .= '<div class="item-detail column1">' . $guitar['id'] . '</div>';
+            $table .= '<div class="item-detail column2"><img src="' . $guitar['fileLocation'] . '"></div>';
+            $table .= '<div class="item-detail column3">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
+            $table .= '<div class="item-detail column4">' . $guitar['year'] . '</div>';
+            $table .= '<div class="item-detail column5">' . $guitar['type'] . '</div>';
+            $table .= '<div class="item-detail column6">' . $guitar['country'] . '</div>';
+            $table .= '<div class="item-detail column7">' . $guitar['value'] . '</div>';
+            $table .= '<div class="item-detail column8">' . $guitar['dateAcquired'] . '</div>';
             $table .= '</div>';
         }
         return $table;
