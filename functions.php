@@ -20,7 +20,7 @@ function getDB()
  * @param $database - this is a PDO established connection to the 'Guitars' database
  * @return array - this contains all information for all guitars in an associative array
  */
-function getAllFromDatabase($database):array
+function getAllFromDatabase(array $database):array
 {
     $sqlGetAll = $database->prepare(
         'SELECT `guitars`.`id`, `images`.`fileLocation`, `brands`.`brand`, `guitars`.`model`, `guitars`.`year`, `types`.`type`,
@@ -40,7 +40,7 @@ function getAllFromDatabase($database):array
     return $sqlGetAll->fetchAll();
 }
 
-function populateRow($item) {
+function populateRow(array $item):string {
     return '<tr>
                     <td>' . $item['id'] . '</td>
                     <td><img src="' . $item['fileLocation'] . '"</td>
@@ -53,7 +53,7 @@ function populateRow($item) {
               </tr>';
 }
 
-function buildTable($guitarsArray) {
+function buildTable(array $guitarsArray):string {
     echo '<tr><th>#</th><th>Image</th><th>Guitar</th><th>Year</th><th>Type</th><th>Country</th><th>Value</th><th>Date Acquired</th>';
     foreach ($guitarsArray as $guitar) {
         echo populateRow($guitar);
