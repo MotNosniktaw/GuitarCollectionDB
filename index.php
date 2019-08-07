@@ -30,7 +30,7 @@ require_once 'functions.php';
     <?php
     $db = getDB();
     $allGuitars = getAllFromDatabase($db);
-    echo buildTable($allGuitars);
+    echo displayGuitars($allGuitars);
     ?>
 </div>
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * takes no inputs and creates an instance of PDO that access Guitars database
+ * creates an instance of PDO that access Guitars database
  *
  * @return PDO
  */
@@ -45,14 +45,14 @@ function getAllFromDatabase(PDO $database):array
 }
 
 /**
- * Takes multidimensional array outputted from PDO fetchAll function.
- * Outputs string containing Guitar Item values separated into separate divs and "row" container divs for respective Guitar Item
+ * Takes multidimensional array to be output as a string
+ * Outputs string containing Guitar Item values separated into separate divs and "row" container divs for respective Guitar Items
  *
  * @param array $guitarsArray
  * @return string
  */
-function buildTable(array $guitarsArray):string {
-    $table = '';
+function displayGuitars(array $guitarsArray):string {
+    $result = '';
     if (isset($guitarsArray[0]['id'])
         && isset($guitarsArray[0]['fileLocation'])
         && isset($guitarsArray[0]['brand']) && isset($guitarsArray[0]['model'])
@@ -60,20 +60,20 @@ function buildTable(array $guitarsArray):string {
         && isset($guitarsArray[0]['country']) && isset($guitarsArray[0]['value'])
         && isset($guitarsArray[0]['dateAcquired'])) {
         foreach ($guitarsArray as $guitar) {
-            $table .= '<div class="row item">';
-            $table .= '<div class="item-detail column1">' . $guitar['id'] . '</div>';
-            $table .= '<div class="item-detail column2"><img src="' . $guitar['fileLocation'] . '"></div>';
-            $table .= '<div class="item-detail column3">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
-            $table .= '<div class="item-detail column4">' . $guitar['year'] . '</div>';
-            $table .= '<div class="item-detail column5">' . $guitar['type'] . '</div>';
-            $table .= '<div class="item-detail column6">' . $guitar['country'] . '</div>';
-            $table .= '<div class="item-detail column7">' . $guitar['value'] . '</div>';
-            $table .= '<div class="item-detail column8">' . $guitar['dateAcquired'] . '</div>';
-            $table .= '</div>';
+            $result .= '<div class="row item">';
+            $result .= '<div class="item-detail column1">' . $guitar['id'] . '</div>';
+            $result .= '<div class="item-detail column2"><img src="' . $guitar['fileLocation'] . '"></div>';
+            $result .= '<div class="item-detail column3">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
+            $result .= '<div class="item-detail column4">' . $guitar['year'] . '</div>';
+            $result .= '<div class="item-detail column5">' . $guitar['type'] . '</div>';
+            $result .= '<div class="item-detail column6">' . $guitar['country'] . '</div>';
+            $result .= '<div class="item-detail column7">' . $guitar['value'] . '</div>';
+            $result .= '<div class="item-detail column8">' . $guitar['dateAcquired'] . '</div>';
+            $result .= '</div>';
         }
-        return $table;
+        return $result;
     } else {
-        return 'Database is not returning valid keys. Please contact administrator';
+        return 'Cannot display required data. Please contact administrator';
     }
 }
 ?>
