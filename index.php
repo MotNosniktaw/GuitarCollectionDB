@@ -18,14 +18,14 @@ require_once 'functions.php';
 </div>
 <div>
     <div class="row header">
-        <div class="item-detail">#</div>
-        <div class="item-detail">Image</div>
-        <div class="item-detail">Guitar</div>
-        <div class="item-detail">Year</div>
-        <div class="item-detail">Type</div>
-        <div class="item-detail">Country</div>
-        <div class="item-detail">Value</div>
-        <div class="item-detail">Date Acquired</div>
+        <div class="item-detail column1">#</div>
+        <div class="item-detail column2">Image</div>
+        <div class="item-detail column3">Guitar</div>
+        <div class="item-detail column4">Year</div>
+        <div class="item-detail column5">Type</div>
+        <div class="item-detail column6">Country</div>
+        <div class="item-detail column7">Value</div>
+        <div class="item-detail column8">Date Acquired</div>
     </div>
     <?php
     $db = getDB();
