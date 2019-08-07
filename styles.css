@@ -5,3 +5,16 @@
 body {
     font-size: 62.5%;
 }
+
+img {
+    width: 200px;
+}
+
+.row {
+    overflow:auto;
+}
+
+.item-detail {
+    float:left;
+    width: 200px;
+}

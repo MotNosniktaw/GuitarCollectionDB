@@ -7,7 +7,7 @@
 #
 # Host: 192.168.20.20 (MySQL 5.6.44)
 # Database: Guitars
-# Generation Time: 2019-08-06 09:28:17 +0000
+# Generation Time: 2019-08-06 10:52:19 +0000
 # ************************************************************
 
 
@@ -157,8 +157,8 @@ VALUES
 	(5,5,'./img/EpiphoneCasino2.jpg'),
 	(6,6,'./img/VintageEAB1.jpg'),
 	(7,6,'./img/VintageEAB2.jpg'),
-	(8,7,'./img/Rickenbacker5003LE1.jpg'),
-	(9,7,'./img/Rickenbacker5003LE2.jpg'),
+	(8,7,'./img/Rickenbacker4003LE1.jpg'),
+	(9,7,'./img/Rickenbacker4003LE2.jpg'),
 	(10,8,'./img/GretschElectromatic1.jpg');
 
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
