@@ -1,17 +1,18 @@
 * {
     box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif;
 }
 
 body {
     font-size: 62.5%;
-    background-image: url("./img/backgroundGif.gif");
-    background-size: 300px;
-    background-repeat: repeat;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-image: url("./img/34216.jpg");
+    background-attachment: fixed;
+    /*background-color: rgba(20, 20, 255, 1);*/
 }
 
 h1 {
     font-size: 3rem;
+    margin: 0;
     text-align: center;
 }
 
@@ -21,20 +22,17 @@ p {
 }
 
 img {
-    height: 70%;
-    margin: auto 0;
-}
-
-div {
-
+    height: 90%;
 }
 
 .container {
     background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
 }
 
 .guitarsContainer {
-    border: 1px solid red;
+    border: 1px sandybrown dashed;
+    background-color: rgba(240, 240, 255, 0.8);
     width: 90%;
     margin: 0 auto;
 }
@@ -50,16 +48,16 @@ div {
 .header {
     font-weight: bold;
     height: 14vh;
-    border: 2px black solid;
+    border: 2px sandybrown dashed;
 }
 
 .item-detail {
     float: left;
-    width: 8%;
+    width: 9%;
     height: 100%;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
-    border: 1px gray solid;
+    border: 1px sandybrown dashed;
 }
 
 .column1 {
@@ -70,10 +68,18 @@ div {
     width: 25%;
 }
 
+.item .column2{
+    background-color: rgba(240, 240, 255, 0.8);
+}
+
 .column3 {
-    width: 15%;
+    width: 16%;
+}
+
+.column6 {
+    width: 12%;
 }
 
 .column8 {
-    width: 12%;
+    width: 16%;
 }

@@ -10,6 +10,8 @@ require_once 'functions.php';
     <title>Guitar Collection</title>
     <link rel="stylesheet" type="text/css" href="normalize-8-0-1.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Barlow|Cairo|Catamaran|Maven+Pro|Rajdhani&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 <div class="container">
