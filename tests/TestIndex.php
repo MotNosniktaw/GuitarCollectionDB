@@ -4,7 +4,7 @@ require_once '../functions.php';
 
 use PHPUnit\Framework\TestCase;
 
-class testIndex extends TestCase
+class TestIndex extends TestCase
 {
     public function testDisplayGuitars_singleItemInputSuccess()
     {

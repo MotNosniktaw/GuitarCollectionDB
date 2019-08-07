@@ -57,9 +57,12 @@ function displayGuitars(array $guitarsArray):string {
         foreach ($guitarsArray as $guitar) {
             if (isset($guitarsArray[$x]['id'])
                 && isset($guitarsArray[$x]['fileLocation'])
-                && isset($guitarsArray[$x]['brand']) && isset($guitarsArray[$x]['model'])
-                && isset($guitarsArray[$x]['year']) && isset($guitarsArray[$x]['type'])
-                && isset($guitarsArray[$x]['country']) && isset($guitarsArray[$x]['value'])
+                && isset($guitarsArray[$x]['brand'])
+                && isset($guitarsArray[$x]['model'])
+                && isset($guitarsArray[$x]['year'])
+                && isset($guitarsArray[$x]['type'])
+                && isset($guitarsArray[$x]['country'])
+                && isset($guitarsArray[$x]['value'])
                 && isset($guitarsArray[$x]['dateAcquired'])) {
                 $result .= '<div class="row item">';
                 $result .= '<div class="item-detail column1">' . $guitar['id'] . '</div>';
@@ -78,5 +81,3 @@ function displayGuitars(array $guitarsArray):string {
         }
         return $result;
     }
-
-?>
