@@ -53,8 +53,8 @@ function getAllFromDatabase(PDO $database):array
  */
 function displayGuitars(array $guitarsArray):string {
     $result = '';
-    $x = 0;
         foreach ($guitarsArray as $guitar) {
+            $x = array_search($guitarsArray, $guitar);
             if (isset($guitarsArray[$x]['id'])
                 && isset($guitarsArray[$x]['fileLocation'])
                 && isset($guitarsArray[$x]['brand'])
@@ -77,7 +77,6 @@ function displayGuitars(array $guitarsArray):string {
             } else {
                 return 'Cannot display required data. Please contact administrator';
             }
-            $x++;
         }
         return $result;
     }
