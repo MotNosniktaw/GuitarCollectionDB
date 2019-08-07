@@ -7,6 +7,7 @@ body {
     background-image: url("./img/backgroundGif.gif");
     background-size: 300px;
     background-repeat: repeat;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 h1 {
@@ -25,27 +26,40 @@ img {
 }
 
 div {
-    background-color: rgba(255, 255, 255, 0.4);
+
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.guitarsContainer {
+    border: 1px solid red;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .row {
     overflow: auto;
-    width: 90%;
-    font-size: 1.4rem;
-    height: 20vh;
+    width: 100%;
+    font-size: 1.6rem;
+    height: 24vh;
     margin: 0 auto;
 }
 
 .header {
     font-weight: bold;
-    height: 12vh;
+    height: 14vh;
+    border: 2px black solid;
 }
 
 .item-detail {
     float: left;
     width: 8%;
+    height: 100%;
     padding: 20px;
     text-align: center;
+    border: 1px gray solid;
 }
 
 .column1 {
@@ -53,7 +67,7 @@ div {
 }
 
 .column2 {
-    width: 20%;
+    width: 25%;
 }
 
 .column3 {

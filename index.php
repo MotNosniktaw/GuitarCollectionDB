@@ -12,11 +12,12 @@ require_once 'functions.php';
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+<div class="container">
 <div>
     <h1>Guitar Collection</h1>
     <p>These are the things in my collection</p>
 </div>
-<div>
+<div class="guitarsContainer">
     <div class="row header">
         <div class="item-detail column1">#</div>
         <div class="item-detail column2">Image</div>
@@ -32,6 +33,7 @@ require_once 'functions.php';
     $allGuitars = getAllFromDatabase($db);
     echo displayGuitars($allGuitars);
     ?>
+</div>
 </div>
 
 </body>
