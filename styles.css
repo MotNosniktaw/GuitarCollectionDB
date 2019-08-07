@@ -31,16 +31,16 @@ img {
 }
 
 .guitarsContainer {
-    border: 1px sandybrown dashed;
+    border: 1px gray solid;
     background-color: rgba(240, 240, 255, 0.8);
     width: 90%;
     margin: 0 auto;
+    font-size: 1.6rem;
 }
 
 .row {
     overflow: auto;
     width: 100%;
-    font-size: 1.6rem;
     height: 24vh;
     margin: 0 auto;
 }
@@ -48,7 +48,6 @@ img {
 .header {
     font-weight: bold;
     height: 14vh;
-    border: 2px sandybrown dashed;
 }
 
 .item-detail {
@@ -57,7 +56,7 @@ img {
     height: 100%;
     padding: 10px;
     text-align: center;
-    border: 1px sandybrown dashed;
+    border: 1px gray solid;
 }
 
 .column1 {
@@ -82,4 +81,81 @@ img {
 
 .column8 {
     width: 16%;
+}
+
+@media screen and (max-aspect-ratio: 4/3) {
+    img {
+        width:70%;
+        height: auto;
+    }
+}
+
+@media screen and (max-height: 750px) {
+    .item {
+        height: 30vh;
+    }
+
+    .guitarsContainer {
+        font-size: 1.4rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .item {
+        height: 35vh;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .guitarsContainer {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .guitarsContainer {
+        font-size: 1rem;
+    }
+
+    .column5 {
+        display: none;
+    }
+
+    .column6 {
+        display: none;
+    }
+
+    .column2 {
+        width: 30%;
+    }
+
+    .column3 {
+        width: 25%;
+    }
+
+    .column4 {
+        width: 12%;
+    }
+
+    .column7 {
+        width: 12%;
+    }
+
+    .column8 {
+        width: 17%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .guitarsContainer {
+        font-size: 1.2rem;
+    }
 }

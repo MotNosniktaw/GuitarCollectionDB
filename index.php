@@ -17,7 +17,7 @@ require_once 'functions.php';
 <div class="container">
 <div>
     <h1>Guitar Collection</h1>
-    <p>These are the things in my collection</p>
+    <p>These are the things in my collection:</p>
 </div>
 <div class="guitarsContainer">
     <div class="row header">
