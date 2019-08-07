@@ -26,7 +26,7 @@ function getDB()
  */
 function getAllFromDatabase(PDO $database):array
 {
-    $sqlGetAll = $database->prepare(
+    $query = $database->prepare(
         'SELECT `guitars`.`id`, `images`.`fileLocation`, `brands`.`brand`, `guitars`.`model`, `guitars`.`year`, `types`.`type`,
                     `countries`.`country`, `guitars`.`value`, `guitars`.`dateAcquired` FROM `guitars`
             LEFT JOIN `images`
@@ -40,8 +40,8 @@ function getAllFromDatabase(PDO $database):array
             GROUP BY `guitars`.`id`;'
     );
 
-    $sqlGetAll->execute();
-    return $sqlGetAll->fetchAll();
+    $query->execute();
+    return $query->fetchAll();
 }
 
 /**
@@ -53,27 +53,30 @@ function getAllFromDatabase(PDO $database):array
  */
 function displayGuitars(array $guitarsArray):string {
     $result = '';
-    if (isset($guitarsArray[0]['id'])
-        && isset($guitarsArray[0]['fileLocation'])
-        && isset($guitarsArray[0]['brand']) && isset($guitarsArray[0]['model'])
-        && isset($guitarsArray[0]['year']) && isset($guitarsArray[0]['type'])
-        && isset($guitarsArray[0]['country']) && isset($guitarsArray[0]['value'])
-        && isset($guitarsArray[0]['dateAcquired'])) {
+    $x = 0;
         foreach ($guitarsArray as $guitar) {
-            $result .= '<div class="row item">';
-            $result .= '<div class="item-detail column1">' . $guitar['id'] . '</div>';
-            $result .= '<div class="item-detail column2"><img src="' . $guitar['fileLocation'] . '"></div>';
-            $result .= '<div class="item-detail column3">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
-            $result .= '<div class="item-detail column4">' . $guitar['year'] . '</div>';
-            $result .= '<div class="item-detail column5">' . $guitar['type'] . '</div>';
-            $result .= '<div class="item-detail column6">' . $guitar['country'] . '</div>';
-            $result .= '<div class="item-detail column7">' . $guitar['value'] . '</div>';
-            $result .= '<div class="item-detail column8">' . $guitar['dateAcquired'] . '</div>';
-            $result .= '</div>';
+            if (isset($guitarsArray[$x]['id'])
+                && isset($guitarsArray[$x]['fileLocation'])
+                && isset($guitarsArray[$x]['brand']) && isset($guitarsArray[$x]['model'])
+                && isset($guitarsArray[$x]['year']) && isset($guitarsArray[$x]['type'])
+                && isset($guitarsArray[$x]['country']) && isset($guitarsArray[$x]['value'])
+                && isset($guitarsArray[$x]['dateAcquired'])) {
+                $result .= '<div class="row item">';
+                $result .= '<div class="item-detail column1">' . $guitar['id'] . '</div>';
+                $result .= '<div class="item-detail column2"><img src="' . $guitar['fileLocation'] . '"></div>';
+                $result .= '<div class="item-detail column3">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
+                $result .= '<div class="item-detail column4">' . $guitar['year'] . '</div>';
+                $result .= '<div class="item-detail column5">' . $guitar['type'] . '</div>';
+                $result .= '<div class="item-detail column6">' . $guitar['country'] . '</div>';
+                $result .= '<div class="item-detail column7">' . $guitar['value'] . '</div>';
+                $result .= '<div class="item-detail column8">' . $guitar['dateAcquired'] . '</div>';
+                $result .= '</div>';
+            } else {
+                return 'Cannot display required data. Please contact administrator';
+            }
+            $x++;
         }
         return $result;
-    } else {
-        return 'Cannot display required data. Please contact administrator';
     }
-}
+
 ?>
