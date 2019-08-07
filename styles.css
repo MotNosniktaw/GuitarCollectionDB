@@ -4,17 +4,62 @@
 
 body {
     font-size: 62.5%;
+    background-image: url("./img/backgroundGif.gif");
+    background-size: 300px;
+    background-repeat: repeat;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+p {
+    font-size: 2rem;
+    text-align: center;
 }
 
 img {
-    width: 200px;
+    height: 70%;
+    margin: auto 0;
+}
+
+div {
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .row {
-    overflow:auto;
+    overflow: auto;
+    width: 90%;
+    font-size: 1.4rem;
+    height: 20vh;
+    margin: 0 auto;
+}
+
+.header {
+    font-weight: bold;
+    height: 12vh;
 }
 
 .item-detail {
-    float:left;
-    width: 200px;
+    float: left;
+    width: 8%;
+    padding: 20px;
+    text-align: center;
+}
+
+.column1 {
+    width: 4%;
+}
+
+.column2 {
+    width: 20%;
+}
+
+.column3 {
+    width: 15%;
+}
+
+.column8 {
+    width: 12%;
 }
