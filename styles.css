@@ -1,4 +1,5 @@
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     font-family: 'Catamaran', sans-serif;
 }
@@ -112,6 +113,12 @@ img {
     .item {
         height: 35vh;
     }
+
+    .guitarsContainer {
+        font-size: 1rem;
+    }
+
+
 }
 
 @media screen and (max-width: 750px) {
@@ -134,11 +141,11 @@ img {
     }
 
     .column2 {
-        width: 30%;
+        width: 29%;
     }
 
     .column3 {
-        width: 25%;
+        width: 24%;
     }
 
     .column4 {
@@ -157,5 +164,36 @@ img {
 @media screen and (max-width: 1250px) {
     .guitarsContainer {
         font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .column5 {
+        display: none;
+    }
+
+    .column6 {
+        display: none;
+    }
+
+    .column2 {
+        width: 48%;
+    }
+
+    .column3 {
+        width: 44%;
+    }
+
+    .column4 {
+        display: none;
+    }
+
+    .column7 {
+        display: none;
+    }
+
+    .column8 {
+        display: none;
     }
 }
