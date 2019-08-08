@@ -33,7 +33,7 @@ if (isset($_GET['newGuitar'])) {
             <div>Type:     <input type="text" name="type" value="<?php echo $_GET['type']?>"></div>
             <div>Country:  <input type="text" name="country" value="<?php echo $_GET['country']?>"></div>
             <div>Year:     <input type="text" name="year" value="<?php echo $_GET['year']?>"></div>
-            <div>Value:    <input type="text" name="value" value="<?php echo $_GET['value']?>"></div>
+            <div>Value:    <input type="number" name="value" value="<?php echo $_GET['value']?>"></div>
             <div>Serial Code: <input type="text" name="serial" value="<?php echo $_GET['serial']?>"></div>
             <div>Image:    <input type="text" name="img" value="<?php echo $_GET['img']?>"></div>
             <div><input type="submit" name="newGuitar"></div>

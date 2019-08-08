@@ -79,7 +79,7 @@ function displayGuitars(array $guitarsArray):string {
     return $result;
     }
 
-function addNewGuitar(array $database):string {
+function addNewGuitar(\PDO $database):string {
 
     $message = '<p>I want to add a new guitar for you!</p>';
     $brandInDB = checkBrands($database);
@@ -87,14 +87,14 @@ function addNewGuitar(array $database):string {
     $countryInDB = checkCountries($database);
 
     if ($brandInDB === true && $typeInDB === true && $countryInDB === true) {
-        $message .= '<p>I can do this because you have provided the appropriate values</p>';
+        $message .= '<p>I can do this because you have provided values we can use</p>';
     } else {
-        $message .= '<p>You should add better information';
+        $message .= '<p>You should add better information</p>';
     }
     return $message;
 }
 
-function checkBrands(array $database): bool {
+function checkBrands(\PDO $database):bool {
     $query = $database->prepare(
         'SELECT `brand` FROM `brands`'
     );
@@ -109,7 +109,7 @@ function checkBrands(array $database): bool {
     return in_array($_GET['brand'], $tidyArray);
 }
 
-function checkTypes(array $database): bool {
+function checkTypes(\PDO $database):bool {
     $query = $database->prepare(
         'SELECT `type` FROM `types`'
     );
@@ -124,7 +124,7 @@ function checkTypes(array $database): bool {
     return in_array($_GET['type'], $tidyArray);
 }
 
-function checkCountries(array $database):bool {
+function checkCountries(\PDO $database):bool {
     $query = $database->prepare(
         'SELECT `country` FROM `countries`'
     );
