@@ -54,7 +54,7 @@ function getAllFromDatabase(PDO $database):array
 function displayGuitars(array $guitarsArray):string {
     $result = '';
         foreach ($guitarsArray as $guitar) {
-            $x = array_search($guitarsArray, $guitar);
+            $x = array_search($guitar, $guitarsArray);
             if (isset($guitarsArray[$x]['id'])
                 && isset($guitarsArray[$x]['fileLocation'])
                 && isset($guitarsArray[$x]['brand'])
