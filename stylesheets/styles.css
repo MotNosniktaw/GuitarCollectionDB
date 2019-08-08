@@ -96,7 +96,7 @@ a {
 
 .form-item {
     overflow: auto;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 .form-container {
@@ -149,6 +149,10 @@ a {
     .guitars-container {
         font-size: 1.2rem;
     }
+
+    input, select {
+        width: 40%;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -182,6 +186,10 @@ a {
 
     .date-acq-column {
         width: 17%;
+    }
+
+    .form-item {
+        font-size: 1rem;
     }
 }
 
