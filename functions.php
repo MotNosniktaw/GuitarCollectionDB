@@ -65,14 +65,14 @@ function displayGuitars(array $guitarsArray):string {
                 && isset($guitarsArray[$x]['value'])
                 && isset($guitarsArray[$x]['dateAcquired'])) {
                 $result .= '<div class="row item">';
-                $result .= '<div class="item-detail column1">' . $guitar['id'] . '</div>';
-                $result .= '<div class="item-detail column2"><img src="' . $guitar['fileLocation'] . '"></div>';
-                $result .= '<div class="item-detail column3">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
-                $result .= '<div class="item-detail column4">' . $guitar['year'] . '</div>';
-                $result .= '<div class="item-detail column5">' . $guitar['type'] . '</div>';
-                $result .= '<div class="item-detail column6">' . $guitar['country'] . '</div>';
-                $result .= '<div class="item-detail column7">' . $guitar['value'] . '</div>';
-                $result .= '<div class="item-detail column8">' . $guitar['dateAcquired'] . '</div>';
+                $result .= '<div class="item-detail number-column">' . $guitar['id'] . '</div>';
+                $result .= '<div class="item-detail img-column"><img src="' . $guitar['fileLocation'] . '"></div>';
+                $result .= '<div class="item-detail name-column">' . $guitar['brand'] . ' ' . $guitar['model'] . '</div>';
+                $result .= '<div class="item-detail year-column">' . $guitar['year'] . '</div>';
+                $result .= '<div class="item-detail type-column">' . $guitar['type'] . '</div>';
+                $result .= '<div class="item-detail country-column">' . $guitar['country'] . '</div>';
+                $result .= '<div class="item-detail value-column">£' . $guitar['value'] . '.00</div>';
+                $result .= '<div class="item-detail date-acq-column">' . $guitar['dateAcquired'] . '</div>';
                 $result .= '</div>';
             } else {
                 return 'Cannot display required data. Please contact administrator';
