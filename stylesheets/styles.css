@@ -25,6 +25,16 @@ img {
     height: 90%;
 }
 
+input, select {
+    width: 60%;
+    float: right;
+}
+
+a {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
 .container {
     background-color: rgba(255, 255, 255, 0.6);
     padding: 20px;
@@ -84,6 +94,22 @@ img {
     width: 15%;
 }
 
+.form-item {
+    overflow: auto;
+    font-size: 1.2rem;
+}
+
+.form-container {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.add-button input{
+    width: 90%;
+    margin: 20px 5%;
+    float: none;
+}
+
 @media screen and (max-aspect-ratio: 4/3) {
     img {
         width:70%;
@@ -123,6 +149,10 @@ img {
     .guitars-container {
         font-size: 1.2rem;
     }
+
+    input, select {
+        width: 40%;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -156,6 +186,10 @@ img {
 
     .date-acq-column {
         width: 17%;
+    }
+
+    .form-item {
+        font-size: 1rem;
     }
 }
 
