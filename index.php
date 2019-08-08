@@ -5,18 +5,6 @@ require_once 'functions.php';
 $db = getDB();
 $allGuitars = getAllFromDatabase($db);
 
-//if (isset($_GET['newGuitar'])
-//    && isset($_GET['brand'])
-//    && isset($_GET['model'])
-//    && isset($_GET['year'])
-//    && isset($_GET['type'])
-//    && isset($_GET['country'])
-//    && isset($_GET['hand'])
-//    && isset($_GET['value'])
-//    && isset($_GET['date'])) {
-//    $returnMessage = addNewGuitar($db);
-//}
-
 ?>
 <html lang=en">
 <head>
@@ -53,9 +41,6 @@ $allGuitars = getAllFromDatabase($db);
             <div>Date Acquired: <input type="date" name="date" value="<?php echo $_GET['date']?>"></div>
             <div><input type="submit" name="newGuitar"></div>
         </form>
-        <?php
-        echo $returnMessage;
-        ?>
     </div>
     <div class="guitars-container">
         <div class="row header">
