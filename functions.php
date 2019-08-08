@@ -79,8 +79,18 @@ function displayGuitars(array $guitarsArray):string {
     return $result;
     }
 
-function addNewGuitar() {
+function addNewGuitar($database) {
     return '<p>I want to add a new guitar!</p><br>';
+    $brandInDB = checkBrands($database);
+    echo $brandInDB . '<br>';
+    $typeInDB = checkTypes($database);
+    echo $typeInDB . '<br>';
+    $countryInDB = checkCountries($database);
+    echo $countryInDB . '<br>';
+
+    if ($brandInDB === true && $typeInDB === true && $countryInDB === true) {
+        return true;
+    }
 }
 
 function checkBrands($database)

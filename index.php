@@ -6,7 +6,7 @@ $db = getDB();
 $allGuitars = getAllFromDatabase($db);
 
 if (isset($_GET['newGuitar'])) {
-    $returnMessage = addNewGuitar();
+    $returnMessage = addNewGuitar($db);
 }
 
 ?>
