@@ -82,3 +82,51 @@ function displayGuitars(array $guitarsArray):string {
 function addNewGuitar() {
     return '<p>I want to add a new guitar!</p><br>';
 }
+
+function checkBrands($database)
+{
+    $query = $database->prepare(
+        'SELECT `brand` FROM `brands`'
+    );
+
+    $query->execute();
+    $assocArray = $query->fetchAll();
+    $tidyArray = [];
+    foreach ($assocArray as $array) {
+        array_push($tidyArray, $array['brand']);
+    }
+
+    return in_array($_GET['brand'], $tidyArray);
+}
+
+function checkTypes($database)
+{
+    $query = $database->prepare(
+        'SELECT `type` FROM `types`'
+    );
+
+    $query->execute();
+    $assocArray = $query->fetchAll();
+    $tidyArray = [];
+    foreach ($assocArray as $array) {
+        array_push($tidyArray, $array['type']);
+    }
+
+    return in_array($_GET['type'], $tidyArray);
+}
+
+function checkCountries($database)
+{
+    $query = $database->prepare(
+        'SELECT `country` FROM `countries`'
+    );
+
+    $query->execute();
+    $assocArray = $query->fetchAll();
+    $tidyArray = [];
+    foreach ($assocArray as $array) {
+        array_push($tidyArray, $array['country']);
+    }
+
+    return in_array($_GET['country'], $tidyArray);
+}
