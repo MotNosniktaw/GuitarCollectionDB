@@ -78,3 +78,7 @@ function displayGuitars(array $guitarsArray):string {
     }
     return $result;
     }
+
+function addNewGuitar() {
+    return '<p>I want to add a new guitar!</p><br>';
+}

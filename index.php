@@ -6,7 +6,7 @@ $db = getDB();
 $allGuitars = getAllFromDatabase($db);
 
 if (isset($_GET['newGuitar'])) {
-    addNewGuitar();
+    $returnMessage = addNewGuitar();
 }
 
 ?>
@@ -38,6 +38,9 @@ if (isset($_GET['newGuitar'])) {
             <div>Image:    <input type="text" name="img" value="<?php echo $_GET['img']?>"></div>
             <div><input type="submit" name="newGuitar"></div>
         </form>
+        <?php
+        echo $returnMessage;
+        ?>
     </div>
     <div class="guitars-container">
         <div class="row header">
