@@ -22,7 +22,7 @@ $allGuitars = getAllFromDatabase($db);
         <h1>Guitar Collection</h1>
         <p>These are the things in my collection:</p>
     </div>
-    <div><a href="addNewGuitar.php">Add a new item</a></div>
+    <div><p><a href="addNewGuitar.php">Add a new item</a></p></div>
     <div class="guitars-container">
         <div class="row header">
             <div class="item-detail number-column">#</div>

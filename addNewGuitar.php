@@ -51,25 +51,25 @@ if (isset($_GET['newGuitar'])
 <?php
     echo $message;
     ?>
-    <form action="addNewGuitar.php" method="get">
-        <div>Brand: <input type="text" name="brand" required></div>
-        <div>Model: <input type="text" name="model" required></div>
-        <div>Year: <input type="number" name="year" required></div>
-        <div>Type: <input type="text" name="type" required></div>
-        <div>Country: <input type="text" name="country" required></div>
-        <div>LH or RH:
+    <form action="addNewGuitar.php" method="get" class="form-container">
+        <div class="form-item">Brand: <input type="text" name="brand" required></div>
+        <div class="form-item">Model: <input type="text" name="model" required></div>
+        <div class="form-item">Year: <input type="number" name="year" required></div>
+        <div class="form-item">Type: <input type="text" name="type" required></div>
+        <div class="form-item">Country: <input type="text" name="country" required></div>
+        <div class="form-item">LH or RH:
             <select name="hand" required>
                 <option value="LH">LH</option>
                 <option value="RH">RH</option>
             </select></div>
-        <div>Value: <input type="number" name="value" required></div>
-        <div>Serial Code: <input type="text" name="serial"></div>
-        <div>Image: <input type="text" name="img"?></div>
-        <div>Date Acquired: <input type="date" name="date" required></div>
-        <div><input type="submit" name="newGuitar"></div>
+        <div class="form-item">Value: <input type="number" name="value" required></div>
+        <div class="form-item">Serial Code: <input type="text" name="serial"></div>
+        <div class="form-item">Image: <input type="text" name="img"?></div>
+        <div class="form-item">Date Acquired: <input type="date" name="date" required></div>
+        <div class="form-item add-button"><input type="submit" name="newGuitar"></div>
     </form>
 
-    <a href="index.php">Go back to DB to see items that have acquired</a>
+    <p><a href="index.php">Go back to DB to see items that have acquired</a></p>
 </div>
 </body>
 </html>
