@@ -80,17 +80,20 @@ function displayGuitars(array $guitarsArray):string {
     }
 
 function addNewGuitar($database) {
-    return '<p>I want to add a new guitar!</p><br>';
+
+    $message = '<p>I want to add a new guitar for you!</p>';
     $brandInDB = checkBrands($database);
-    echo $brandInDB . '<br>';
     $typeInDB = checkTypes($database);
-    echo $typeInDB . '<br>';
     $countryInDB = checkCountries($database);
-    echo $countryInDB . '<br>';
 
     if ($brandInDB === true && $typeInDB === true && $countryInDB === true) {
-        return true;
+        $message .= '<p>I can do this because you have provided the appropriate values</p>';
+    } else {
+        $message .= '<p>You should add better information';
     }
+    return $message;
+
+    
 }
 
 function checkBrands($database)
