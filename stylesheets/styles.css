@@ -6,7 +6,7 @@
 
 body {
     font-size: 62.5%;
-    background-image: url("./img/34216.jpg");
+    background-image: url("../img/34216.jpg");
     background-attachment: fixed;
 }
 
@@ -30,7 +30,7 @@ img {
     padding: 20px;
 }
 
-.guitarsContainer {
+.guitars-container {
     border: 1px gray solid;
     background-color: rgba(240, 240, 255, 0.8);
     width: 90%;
@@ -56,28 +56,32 @@ img {
     border: 1px gray solid;
 }
 
-.column1 {
+.number-column {
     width: 4%;
 }
 
-.column2 {
+.img-column {
     width: 25%;
 }
 
-.item .column2{
+.item .img-column{
     background-color: rgba(240, 240, 255, 0.8);
 }
 
-.column3 {
-    width: 16%;
+.name-column {
+    width: 15%;
 }
 
-.column6 {
-    width: 12%;
+.country-column {
+    width: 10%;
 }
 
-.column8 {
-    width: 16%;
+.value-column {
+    width: 13%;
+}
+
+.date-acq-column {
+    width: 15%;
 }
 
 @media screen and (max-aspect-ratio: 4/3) {
@@ -92,11 +96,9 @@ img {
         height: 35vh;
     }
 
-    .guitarsContainer {
+    .guitars-container {
         font-size: 1rem;
     }
-
-
 }
 
 @media screen and (max-height: 750px) {
@@ -104,7 +106,7 @@ img {
         height: 30vh;
     }
 
-    .guitarsContainer {
+    .guitars-container {
         font-size: 1.4rem;
     }
 
@@ -118,77 +120,85 @@ img {
 }
 
 @media screen and (max-width: 1250px) {
-    .guitarsContainer {
+    .guitars-container {
         font-size: 1.2rem;
     }
 }
 
 @media screen and (max-width: 900px) {
-    .guitarsContainer {
+    .guitars-container {
         font-size: 1rem;
     }
 
-    .column5 {
+    .type-column {
         display: none;
     }
 
-    .column6 {
+    .country-column {
         display: none;
     }
 
-    .column2 {
+    .img-column {
         width: 29%;
     }
 
-    .column3 {
+    .name-column {
         width: 24%;
     }
 
-    .column4 {
+    .year-column {
         width: 12%;
     }
 
-    .column7 {
-        width: 12%;
+    .value-column {
+        width: 14%;
     }
 
-    .column8 {
+    .date-acq-column {
         width: 17%;
     }
 }
 
 @media screen and (max-width: 750px) {
-    .guitarsContainer {
+    .guitars-container {
         font-size: 0.8rem;
+    }
+
+    .row {
+        overflow: auto;
+    }
+
+    .guitars-container {
+        width: 600px;
     }
 }
 
-@media screen and (max-width: 400px) {
-    .column5 {
+@media screen and (max-width: 620px) {
+    .number-column{
+        display:none;
+    }
+
+    .guitars-container {
+        width: 90%;
+    }
+
+    .img-column {
+        width: 50%;
+    }
+
+    .name-column {
+        width: 50%;
+    }
+
+    .year-column {
         display: none;
     }
 
-    .column6 {
+    .value-column {
         display: none;
     }
 
-    .column2 {
-        width: 48%;
-    }
-
-    .column3 {
-        width: 44%;
-    }
-
-    .column4 {
-        display: none;
-    }
-
-    .column7 {
-        display: none;
-    }
-
-    .column8 {
+    .date-acq-column {
         display: none;
     }
 }

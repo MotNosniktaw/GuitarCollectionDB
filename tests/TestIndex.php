@@ -11,7 +11,7 @@ class TestIndex extends TestCase
         $guitarInput = [['id' => 1, 'fileLocation' => './img/guitarPic1.jpg', 'brand' => 'Yamaha', 'model' => 'Guitar', 'year' => 1999,
             'type' => 'Electric', 'country' => 'Japan', 'value' => 25, 'dateAcquired' => '2000-01-01']];
 
-        $expectedTableContents = '<div class="row item"><div class="item-detail column1">1</div><div class="item-detail column2"><img src="./img/guitarPic1.jpg"></div><div class="item-detail column3">Yamaha Guitar</div><div class="item-detail column4">1999</div><div class="item-detail column5">Electric</div><div class="item-detail column6">Japan</div><div class="item-detail column7">25</div><div class="item-detail column8">2000-01-01</div></div>';
+        $expectedTableContents = '<div class="row item"><div class="item-detail number-column">1</div><div class="item-detail img-column"><img src="./img/guitarPic1.jpg"></div><div class="item-detail name-column">Yamaha Guitar</div><div class="item-detail year-column">1999</div><div class="item-detail type-column">Electric</div><div class="item-detail country-column">Japan</div><div class="item-detail value-column">£25.00</div><div class="item-detail date-acq-column">2000-01-01</div></div>';
 
         $tableContents = displayGuitars($guitarInput);
 
