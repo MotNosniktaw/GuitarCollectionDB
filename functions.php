@@ -79,20 +79,20 @@ function displayGuitars(array $guitarsArray):string {
     return $result;
     }
 
-function addNewGuitar(\PDO $database):string {
-
-    $message = '<p>I want to add a new guitar for you!</p>';
-    $brandInDB = checkBrands($database);
-    $typeInDB = checkTypes($database);
-    $countryInDB = checkCountries($database);
-
-    if ($brandInDB === true && $typeInDB === true && $countryInDB === true) {
-        $message .= '<p>I can do this because you have provided values we can use</p>';
-    } else {
-        $message .= '<p>You should add better information</p>';
-    }
-    return $message;
-}
+//function addNewGuitar(\PDO $database):string {
+//
+//    $message = '<p>I want to add a new guitar for you!</p>';
+//    $brandInDB = checkBrands($database);
+//    $typeInDB = checkTypes($database);
+//    $countryInDB = checkCountries($database);
+//
+//    if ($brandInDB === true && $typeInDB === true && $countryInDB === true) {
+//        $message .= '<p>I can do this because you have provided values we can use</p>';
+//    } else {
+//        $message .= '<p>You should add better information</p>';
+//    }
+//    return $message;
+//}
 
 function checkBrands(\PDO $database):bool {
     $query = $database->prepare(
@@ -138,3 +138,32 @@ function checkCountries(\PDO $database):bool {
 
     return in_array($_GET['country'], $tidyArray);
 }
+
+function addNewImage($database) {
+    if (isset($_GET['img'])) {
+        $query = $database->prepare('INSERT INTO `images`(`guitarID`, `fileLocation`) VALUES ((SELECT `id` FROM `guitars` ORDER BY `id` DESC LIMIT 1), :filePath)');
+        $query->bindParam('filePath', $_GET['img'], PDO::PARAM_STR);
+    } else {
+        $query = $database->prepare('INSERT INTO `images`(`guitarID`) VALUES ((SELECT `id` FROM `guitars` ORDER BY `id` DESC LIMIT 1))');
+    }
+
+    $query->execute();
+}
+
+function addNewGuitar($database) {
+    $query = $database->prepare(
+        'INSERT INTO `guitars`(`brandID`, `model`, `year`, `typeID`, `countryID`, `LH or RH`, `value`, `serialCode`, `dateAcquired`)
+        VALUES (:brand, :model, :year, :type, :country, :LHorRH, :value, :serialCode, :date )');
+    $query-bindParam('brand', $_GET['brand'], PDO::PARAM_INT);
+    $query-bindParam('model', $_GET['model'], PDO::PARAM_STR);
+    $query-bindParam('year', $_GET['year'], PDO::PARAM_INT);
+    $query-bindParam('type', $_GET['typeID'], PDO::PARAM_INT);
+    $query-bindParam('country', $_GET['countryID'], PDO::PARAM_INT);
+    $query-bindParam('LHorRH', $_GET['hand'], PDO::PARAM_STR);
+    $query-bindParam('value', $_GET['value'], PDO::PARAM_INT);
+    $query-bindParam('serialCode', $_GET['serialCode'], PDO::PARAM_STR);
+    $query-bindParam('date', $_GET['dateAcquired'], PDO::PARAM_STR);
+
+    $query->execute();
+}
+
