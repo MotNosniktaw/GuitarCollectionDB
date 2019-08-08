@@ -79,7 +79,7 @@ function displayGuitars(array $guitarsArray):string {
     return $result;
     }
 
-function addNewGuitar($database) {
+function addNewGuitar(array $database):string {
 
     $message = '<p>I want to add a new guitar for you!</p>';
     $brandInDB = checkBrands($database);
@@ -92,12 +92,9 @@ function addNewGuitar($database) {
         $message .= '<p>You should add better information';
     }
     return $message;
-
-    
 }
 
-function checkBrands($database)
-{
+function checkBrands(array $database): bool {
     $query = $database->prepare(
         'SELECT `brand` FROM `brands`'
     );
@@ -112,8 +109,7 @@ function checkBrands($database)
     return in_array($_GET['brand'], $tidyArray);
 }
 
-function checkTypes($database)
-{
+function checkTypes(array $database): bool {
     $query = $database->prepare(
         'SELECT `type` FROM `types`'
     );
@@ -128,8 +124,7 @@ function checkTypes($database)
     return in_array($_GET['type'], $tidyArray);
 }
 
-function checkCountries($database)
-{
+function checkCountries(array $database):bool {
     $query = $database->prepare(
         'SELECT `country` FROM `countries`'
     );
