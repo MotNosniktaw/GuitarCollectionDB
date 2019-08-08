@@ -6,13 +6,13 @@ $db = getDB();
 $allGuitars = getAllFromDatabase($db);
 
 ?>
+<!DOCTYPE HTML>
 <html lang=en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Guitar Collection</title>
-    <link href="https://fonts.googleapis.com/css?family=Catamaran&display=swap"
-          rel="stylesheet">
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran&display=swap">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize-8-0-1.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
 </head>
@@ -34,9 +34,7 @@ $allGuitars = getAllFromDatabase($db);
             <div class="item-detail value-column">Value</div>
             <div class="item-detail date-acq-column">Date Acquired</div>
         </div>
-        <?php
-        echo displayGuitars($allGuitars);
-        ?>
+        <?php echo displayGuitars($allGuitars); ?>
     </div>
 </div>
 
