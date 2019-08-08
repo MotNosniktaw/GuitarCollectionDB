@@ -1,0 +1,204 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Catamaran', sans-serif;
+}
+
+body {
+    font-size: 62.5%;
+    background-image: url("../img/34216.jpg");
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    text-align: center;
+}
+
+p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+img {
+    height: 90%;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+}
+
+.guitars-container {
+    border: 1px gray solid;
+    background-color: rgba(240, 240, 255, 0.8);
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.6rem;
+}
+
+.row {
+    height: 24vh;
+}
+
+.header {
+    font-weight: bold;
+    height: 14vh;
+}
+
+.item-detail {
+    float: left;
+    width: 9%;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1px gray solid;
+}
+
+.number-column {
+    width: 4%;
+}
+
+.img-column {
+    width: 25%;
+}
+
+.item .img-column{
+    background-color: rgba(240, 240, 255, 0.8);
+}
+
+.name-column {
+    width: 15%;
+}
+
+.country-column {
+    width: 10%;
+}
+
+.value-column {
+    width: 13%;
+}
+
+.date-acq-column {
+    width: 15%;
+}
+
+@media screen and (max-aspect-ratio: 4/3) {
+    img {
+        width:70%;
+        height: auto;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .item {
+        height: 35vh;
+    }
+
+    .guitars-container {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-height: 750px) {
+    .item {
+        height: 30vh;
+    }
+
+    .guitars-container {
+        font-size: 1.4rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .guitars-container {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .guitars-container {
+        font-size: 1rem;
+    }
+
+    .type-column {
+        display: none;
+    }
+
+    .country-column {
+        display: none;
+    }
+
+    .img-column {
+        width: 29%;
+    }
+
+    .name-column {
+        width: 24%;
+    }
+
+    .year-column {
+        width: 12%;
+    }
+
+    .value-column {
+        width: 14%;
+    }
+
+    .date-acq-column {
+        width: 17%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .guitars-container {
+        font-size: 0.8rem;
+    }
+
+    .row {
+        overflow: auto;
+    }
+
+    .guitars-container {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .number-column{
+        display:none;
+    }
+
+    .guitars-container {
+        width: 90%;
+    }
+
+    .img-column {
+        width: 50%;
+    }
+
+    .name-column {
+        width: 50%;
+    }
+
+    .year-column {
+        display: none;
+    }
+
+    .value-column {
+        display: none;
+    }
+
+    .date-acq-column {
+        display: none;
+    }
+}
